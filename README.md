@@ -57,8 +57,8 @@ echo '/dev/md0 /mnt/raid ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc/fs
 
 ### Simulando falha de um disco (RAID 1 e RAID 5)
 ```bash
-sudo mdadm --fail /dev/md0 /dev/sdX
-sudo mdadm --remove /dev/md0 /dev/sdX
+sudo mdadm --manage /dev/md0 --fail /dev/sdX
+sudo mdadm --manage /dev/md0 --remove /dev/sdX
 ```
 
 ### Substituindo disco com falha
